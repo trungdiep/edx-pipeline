@@ -1,6 +1,6 @@
 ---
 
-- name: Configure luigi
+- name: Configure luigi123
   hosts: "{{ name }}"
   gather_facts: True
   sudo: True
