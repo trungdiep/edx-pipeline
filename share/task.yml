@@ -59,17 +59,17 @@
       shell: echo $HOME
       register: home_output
       debug:
-        msg: {{ home }}
+        msg: {{ home }}/pipeline
         var: home_output
     - name: set the home variable
       set_fact: home="{{ home_output.stdout }}"
 
     - name: known_hosts file exists
-      command: touch {{ home }}/.ssh/known_hosts creates={{ home }}/.ssh/known_hosts
+      command: touch {{ home }}/pipeline/.ssh/known_hosts creates={{ home }}/pipeline/.ssh/known_hosts
 
     - name: git server in known_hosts file
       lineinfile: >
-        dest={{ home }}/.ssh/known_hosts
+        dest={{ home }}/pipeline/.ssh/known_hosts
         regexp=^{{item.hostname}}
         line="{{ item.hostname }} {{ item.public_key }}"
       with_items: git_servers
