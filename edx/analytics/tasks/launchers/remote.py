@@ -273,6 +273,7 @@ def get_ansible_inventory():
     Otherwise new resources will not be present in the inventory which will cause ansible to fail to connect to them.
 
     """
+    log('123')
     command = [EC2_INVENTORY_PATH, '--refresh-cache']
     log('Running command = {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
