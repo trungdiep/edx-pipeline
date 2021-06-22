@@ -9,10 +9,10 @@
     common_debian_variants:
       - Ubuntu
       - Debian
-    common_redhat_variants:
-      - CentOS
-      - Red Hat Enterprise Linux
-      - Amazon
+    # common_redhat_variants:
+    #   - CentOS
+    #   - Red Hat Enterprise Linux
+    #   - Amazon
   roles:
     - role: luigi
       when: write_luigi_config|bool
