@@ -69,6 +69,8 @@ def main():
             arguments.launch_task_arguments.append('--additional-config')
             arguments.launch_task_arguments.append(os.path.join(REMOTE_DATA_DIR, uid, REMOTE_CONFIG_DIR_BASE, config_path))
 
+    log('diep van trung')
+
     if arguments.vagrant_path:
         parse_vagrant_ssh_config(arguments)
 
