@@ -95,6 +95,7 @@ def run_task_playbook(inventory, arguments, uid):
         uid (str): A unique identifier for this task execution.
     """
     if not arguments.skip_setup:
+        print(123)
         extra_vars = convert_args_to_extra_vars(arguments, uid)
         args = ['task.yml', '-e', extra_vars]
         prep_result = run_ansible(tuple(args), arguments, executable='ansible-playbook')
