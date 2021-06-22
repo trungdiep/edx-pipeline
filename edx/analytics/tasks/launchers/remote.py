@@ -288,7 +288,7 @@ def get_ansible_inventory():
 
     if proc.returncode != 0:
         raise RuntimeError('Unable to refresh ansible inventory cache.')
-
+    log(json.loads(stdout))
     return json.loads(stdout)
 
 
