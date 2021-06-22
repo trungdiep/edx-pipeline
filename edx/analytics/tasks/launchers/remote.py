@@ -235,7 +235,7 @@ def parse_vagrant_ssh_config(arguments):
     log('Connecting to vagrant container in {0}'.format(arguments.vagrant_path))
     log('123 {0}'.format(dir(arguments)))
     command = 'vagrant ssh-config'
-    log('Running command = {0}'.format(command))
+    log('Running command ssh_config= {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
         proc = Popen(
             command,
@@ -277,7 +277,7 @@ def get_ansible_inventory():
 
     """
     command = [EC2_INVENTORY_PATH, '--refresh-cache']
-    log('Running command = {0}'.format(command))
+    log('Running command_inventory = {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
         proc = Popen(
             command,
@@ -324,7 +324,7 @@ def run_ansible(args, arguments, executable='ansible'):
         # happen, so just trust we have the right machine.
         'ANSIBLE_SSH_ARGS': '-o ForwardAgent=yes -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
     })
-    log('Running command = {0}'.format(command))
+    log('Running command diep van trung = {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
         proc = Popen(
             command,
@@ -367,7 +367,7 @@ def run_remote_shell(inventory, arguments, shell_command):
     if arguments.private_key:
         command.extend(['-i', arguments.private_key])
     command.extend([hostname, shell_command])
-    log('Running command = {0}'.format(command))
+    log('Running command remote shell= {0}'.format(command))
     proc = Popen(
         command,
         cwd=STATIC_FILES_PATH
