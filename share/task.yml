@@ -55,7 +55,7 @@
     - packages: []
 
   tasks:
-    - name: find home directory
+    - name: find home directory123
       shell: echo $HOME
       register: home_output
 
