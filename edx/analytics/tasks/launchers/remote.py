@@ -231,7 +231,7 @@ def convert_args_to_extra_vars(arguments, uid):
 def parse_vagrant_ssh_config(arguments):
     """Runs 'vagrant ssh-config' and parses results to find argument values for host, user, port, etc."""
     log('Connecting to vagrant container in {0}'.format(arguments.vagrant_path))
-    log(''.format(dir(arguments)))
+    log('123 {0}'.format(dir(arguments)))
     command = 'vagrant ssh-config'
     log('Running command = {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
