@@ -232,7 +232,7 @@ def parse_vagrant_ssh_config(arguments):
     """Runs 'vagrant ssh-config' and parses results to find argument values for host, user, port, etc."""
     log('Connecting to vagrant container in {0}'.format(arguments.vagrant_path))
     command = 'vagrant ssh-config'
-    log('Running command = {0}'.format(command))
+    log('Running command123 = {0}'.format(command))
     with open('/dev/null', 'r+') as devnull:
         proc = Popen(
             command,
