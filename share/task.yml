@@ -1,6 +1,6 @@
 ---
 
-- name: Configure luigi123
+- name: Configure luigi
   hosts: "{{ name }}"
   gather_facts: True
   sudo: True
@@ -58,9 +58,7 @@
     - name: find home directory
       shell: echo $HOME
       register: home_output
-      debug:
-        msg: {{ home }}
-        var: home_output
+
     - name: set the home variable
       set_fact: home="{{ home_output.stdout }}"
 
