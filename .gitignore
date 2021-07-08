@@ -45,7 +45,6 @@ edx_analytics.log
 venv
 
 # Override config files
-override.cfg
 
 # JetBrains
 .idea
@@ -71,3 +70,5 @@ docs/source/workflow_entry_point.rst
 *.java
 TempStatsStore/
 derby.log
+
+.vscode
