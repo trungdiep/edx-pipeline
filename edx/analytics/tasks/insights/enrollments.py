@@ -57,6 +57,9 @@ class CourseEnrollmentEventsTask(
         if value is None:
             return
         event, date_string = value
+        
+        logging.info(event, date_string)
+
         self.incr_counter(self.counter_category_name, 'Inputs with Dates', 1)
 
         event_type = event.get('event_type')
@@ -156,6 +159,7 @@ class CourseEnrollmentEventsTask(
         for date in self.interval:
             url = self.output_path_for_key(date.isoformat())
             target = get_target_from_url(url)
+            logging.info(target)
             if not target.exists():
                 target.open("w").close()  # touch the file
 
