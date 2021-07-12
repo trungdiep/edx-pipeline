@@ -208,6 +208,7 @@ class SqoopImportTask(OverwriteOutputMixin, SqoopImportMixin, luigi.contrib.hado
         cred = {}
         with self.input()['credentials'].open('r') as credentials_file:
             raw_credentials = list(credentials_file.__iter__())[0][:-1]
+            print(raw_credentials)
             cred = json.load(raw_credentials)
         return cred
 
